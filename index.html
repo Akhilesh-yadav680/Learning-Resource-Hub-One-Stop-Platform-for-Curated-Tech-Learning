@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Learning Resources Hub </title>
+  <!--Favicon-->
+  <link rel="icon" href="favicon.png" type="image/png">
+  <img src="favicon.png" alt="Logo" style="height:80px; width:80px; border-radius:8px; object-fit:cover;">
+
+
+
+  <!-- AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Particles background container -->
+  <div id="particles-js" aria-hidden="true"></div>
+
+  <header class="site-header" role="banner">
+    <div class="brand" data-aos="fade-down">
+      <h1>Learning Resources Hub</h1>
+      <p class="tagline">All resources in one place — Roadmaps, Playlists, Certs & more</p>
+    </div>
+
+    <nav class="nav-right" data-aos="fade-down" data-aos-delay="40" role="navigation">
+      <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+      <button id="about-btn" class="btn-about">About Us</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" role="region" aria-label="Hero">
+      <div class="hero-inner" data-aos="fade-up">
+        <h2 id="main-title">All resources in one place</h2>
+        <h3 id="typed-target" class="typed-line"></h3>
+
+        <!-- Centered search bar -->
+        <div class="search-wrap" data-aos="zoom-in" data-aos-delay="150" role="search">
+          <input id="global-search" type="search" placeholder="Search resources, playlists, roadmaps, cheat sheets..." aria-label="Search resources" />
+          <button id="search-btn" aria-label="Search">Search</button>
+        </div>
+
+        <div class="quick-links" data-aos="fade-up" data-aos-delay="250" aria-hidden="false">
+          <a href="#" class="chip" data-domain="Data Analyst">Data Analyst</a>
+          <a href="#" class="chip" data-domain="Machine Learning">Machine Learning</a>
+          <a href="#" class="chip" data-domain="Web Development(Frontend)">Web Development(Frontend)</a>
+          <a href="#" class="chip" data-domain="AI Engineer">AI Engineer</a>
+          <a href="#" class="chip" data-domain="Cybersecurity">Cyber Security</a>
+          <a href="#" class="chip" data-domain="Web Development(Backend)">Web Development(Backend)</a>
+          <a href="#" class="chip" data-domain="Web Development(Full Stack)">Web Development(Full Stack)</a>
+          <a href="#" class="chip" data-domain="DevOps">DevOps</a>
+          <a href="#" class="chip" data-domain="AI and Data Scientist">AI and Data Scientist</a>
+          <a href="#" class="chip" data-domain="Data Engineer">Data Engineer</a>
+          <a href="#" class="chip" data-domain="Android">Android</a>
+          <a href="#" class="chip" data-domain="Blockchain">Blockchain</a>
+          <a href="#" class="chip" data-domain="UX Design">UX Design</a>
+          <a href="#" class="chip" data-domain="Game Developer">Game Developer</a>
+          <a href="#" class="chip" data-domain="SQL">SQL</a>
+          <a href="#" class="chip" data-domain="React">React</a>
+          <a href="#" class="chip" data-domain="Angular">Angular</a>
+          <a href="#" class="chip" data-domain="JavaScript">JavaScript</a>
+          <a href="#" class="chip" data-domain="Node.js">Node.js</a>
+          <a href="#" class="chip" data-domain="Python">Python</a>
+          <a href="#" class="chip" data-domain="Java">Java</a>
+          <a href="#" class="chip" data-domain="C++">C++</a>
+          <a href="#" class="chip" data-domain="Rust">Rust</a>
+          <a href="#" class="chip" data-domain="Prompt Engineering">Prompt Engineering</a>
+          <a href="#" class="chip" data-domain="MongoDB">MongoDB</a>
+          <a href="#" class="chip" data-domain="Linux">Linux</a>
+          <a href="#" class="chip" data-domain="AWS">AWS</a>
+          <a href="#" class="chip" data-domain="Git and GitHub">Git and GitHub</a>
+          <a href="#" class="chip" data-domain="Data Structures and Algorithms">Data Structures and Algorithms</a>
+          <a href="#" class="chip" data-domain="PHP">PHP</a>
+          <a href="#" class="chip" data-domain="AI Agents">AI Agents</a>
+          <a href="#" class="chip" data-domain="Next.js">Next.js</a>
+          <a href="#" class="chip" data-domain="Kotlin">Kotlin</a>
+          <a href="#" class="chip" data-domain="html">HTML</a>
+          <a href="#" class="chip" data-domain="CSS">CSS</a>
+          <a href="#" class="chip" data-domain="Docker">Docker</a>
+          <a href="#" class="chip" data-domain="Redis">Redis</a>
+          <a href="#" class="chip" data-domain="Kubernetes">Kubernetes</a>
+          <a href="#" class="chip" data-domain="Flutter">Flutter</a>
+          <a href="#" class="chip" data-domain="MLOps">MLOps</a>
+          <a href="#" class="chip" data-domain="BI Analyst">BI Analyst</a>
+          <a href="#" class="chip" data-domain="Spring Boot">Spring Boot</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Domains listing -->
+    <section class="domains" data-aos="fade-up" data-aos-delay="300" aria-label="Featured domains">
+      <h4 class="section-title">Featured Domains</h4>
+      <div class="domain-grid" id="domain-grid">
+        <!-- Domain cards inserted by JS -->
+      </div>
+    </section>
+
+    <!-- Search Results -->
+    <section class="results-section" id="results-section" aria-live="polite" data-aos="fade-up">
+      <h4 class="section-title" id="results-title" style="display:none;">Search Results</h4>
+      <div id="results" class="results-grid">
+        <!-- search results cards -->
+      </div>
+    </section>
+
+    <!-- Domain Detail Modal -->
+    <div id="domain-modal" class="modal" aria-hidden="true">
+      <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" id="domain-modal-close" aria-label="Close">✕</button>
+        <div id="modal-body" class="modal-body">
+          <!-- populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- About Modal -->
+    <div id="about-modal" class="modal" aria-hidden="true">
+      <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="about-title">
+        <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+        <h2 id="about-title">About Learning Resources Hub</h2>
+        <p class="about-motive">
+          In this website you can find curated resources(Handpicked) for trending domains. Instead of searching the entire internet, get high-quality roadmaps, playlists, certifications, interview prep, books, podcasts, blogs, cheat sheets, challenges, tools, communities, and news & trends — all in one place.
+        </p>
+
+        <div class="about-me">
+          <h3>Muddam Akhilesh Yadav</h3>
+          <p>Student • Developer • Curator of learning Resources</p>
+          <div class="socials">
+            <a href="https://github.com/Akhilesh-yadav680" target="" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/muddam-akhilesh-yadav-0a71a932b/" target="" rel="noopener">linkedin</a>
+            <a href="https://akhilesh-yadav680.github.io/" target="" rel="noopener">Portfolio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>Made by Muddam Akhilesh Yadav</p>
+    </div>
+  </footer>
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
